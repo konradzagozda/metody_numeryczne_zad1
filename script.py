@@ -1,5 +1,5 @@
 from util import horner
-
+from interface import get_params_from_user
 
 
 # 1. niech uzytkownik wybierze funkcje (  wielomian, trygonometryczną, wykładniczą i ich złożenia. )
@@ -10,6 +10,5 @@ from util import horner
 #   5.1 wyświetla współrzędne miejsc zerowych
 #   5.2 rysowanie wykresu danej funkcji
 
-
-
-
+params = get_params_from_user()
+print(params)

@@ -6,12 +6,10 @@ def horner(wielomian, n, x):
 
     return result
 
-
-# zaimplementowac wybor funkcji np switchem
-def wybierz_funkcje(x, choice):
+#todo
+def styczna():
     pass
 
-
-#
-def styczna(a, b, eps, choice, variantchoice, iter):
+#todo
+def sieczna():
     pass
