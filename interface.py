@@ -4,11 +4,11 @@ def get_params_from_user():
     params['func'] = int(input(
         '''
         Wybierz funkcję:
-        1. 4x^5 + 3x^4 + 2x^3 + x^2 + 4x - 2
-        2. sin(x)
-        3. 3^x
-        4. 3^x * sin(x)
-        5. (4x^5 + 3x^4 + 2x^3 + x^2 + 4x - 2) * sin(x)
+        1. x^2 - 3 / x = -1.7, x = 1.7
+        2. sin(x) / x = 0 +- pi
+        3. 3^x - 2 / x = 0.63
+        4. 3^x * sin(x) / x = 0, x = 0.63
+        5. (x^2 - 3) * sin(x) / x = -3,14, x = 0 ... 
         >>>'''))
 
     params['a'] = float(input(

@@ -1,4 +1,6 @@
-from util import horner
+import math
+
+from util import horner, szukaj_miejsc_zerowych_metoda_cieciw
 from interface import get_params_from_user
 
 
@@ -10,5 +12,7 @@ from interface import get_params_from_user
 #   5.1 wyświetla współrzędne miejsc zerowych
 #   5.2 rysowanie wykresu danej funkcji
 
-params = get_params_from_user()
-print(params)
+# params = get_params_from_user()
+# print(params)
+
+print(szukaj_miejsc_zerowych_metoda_cieciw(0,3,'eps', 0.01, math.cos))
