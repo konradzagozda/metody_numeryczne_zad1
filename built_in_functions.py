@@ -1,6 +1,7 @@
 import math
 
 
+# wielomian to tablica wspolczynnikow od a_0 do a_n
 def horner(wielomian, n, x):
     result = wielomian[0]
 
@@ -9,22 +10,21 @@ def horner(wielomian, n, x):
 
     return result
 
-#todo
 # x^2 - 3
 def wielomian(x):
-    pass
+    return horner([1,0,-3], 3, x)
 
 def sinus(x):
     return math.sin(x)
 
 # 3^x - 2
 def wykladnicza(x):
-    pass
+    return 3**x - 2
 
 # 3^x * sin(x)
 def zlozenie_wykladnicza_sinus(x):
-    pass
+    return wykladnicza(x) * sinus(x)
 
 # (x^2 - 3) * sin(x)
 def zlozenie_wielomian_sinus(x):
-    pass
+    return wielomian(x) * sinus(x)
