@@ -27,7 +27,6 @@ def get_params_from_user():
     else:
         params['func'] = Functions.SINUS
 
-
     print("pamietaj by punkty początkowe mialy inne znaki!")
 
     params['a'] = float(input(

@@ -1,11 +1,10 @@
-import math
-import built_in_functions
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 from util import szukaj_miejsc_zerowych_metoda_siecznych
 from interface import get_params_from_user
-from built_in_functions import *
+
 
 # 1. niech uzytkownik wybierze funkcje (  wielomian, trygonometryczną, wykładniczą i ich złożenia. )
 # 2. uzytkownik wybiera przedzial a - b poszukiwania miejsca zerowego
@@ -19,15 +18,15 @@ while True:
     params = get_params_from_user()
     print(params)
 
-    points_sieczne = szukaj_miejsc_zerowych_metoda_siecznych(params['a'], params['b'], params['stop'], params['stop-param'], params['func'])
-    print(f"znalezione miejsce zerowe: {points_sieczne[len(points_sieczne) -1]}")
+    points_sieczne = szukaj_miejsc_zerowych_metoda_siecznych(params['a'], params['b'], params['stop'],
+                                                             params['stop-param'], params['func'])
+    print(f"znalezione miejsce zerowe: {points_sieczne[len(points_sieczne) - 1]}")
     print(f"liczba iteracji: {len(points_sieczne) - 2}")
 
     ##############################
-    #todo:
+    # todo:
     # miejsce na wywolanie metody
     ################################
-
 
     X = []
     Y = []
@@ -50,8 +49,6 @@ while True:
     plt.show()
 
     ##############################
-    #todo:
+    # todo:
     # miejsce na dodanie punktow do wykresu ( opcjonalnie )
     ################################
-
-

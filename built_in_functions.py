@@ -2,6 +2,7 @@ import math
 
 from enum import Enum
 
+
 # wielomian to lista wspolczynnikow, n to liczba wyrazow wielomianu (stopien + 1), x to x
 def horner(wielomian, n, x):
     result = wielomian[0]
