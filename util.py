@@ -1,8 +1,27 @@
 import sys
+from enum import Enum
+import built_in_functions
 
-#return miejsce zerowe ( zalozmy ze jest jedno )
-def szukaj_miejsc_zerowych_metoda_cieciw(a,b, stop, stop_param, f):
-    init_a, init_b = a, b
+class Point:
+    def __init__(self, x, y):
+        self.__x = x
+        self.__y = y
+
+    def get_x(self):
+        return self.__x
+
+    def get_y(self):
+        return self.__y
+
+    def __str__(self):
+        return f'{self.__x}, {self.__y}'
+
+# return miejsce zerowe ( zalozmy ze jest jedno )
+# metoda nie zawsze zbieżna
+def szukaj_miejsc_zerowych_metoda_siecznych(a, b, stop, stop_param, f):
+    p = [Point(a, f(a)), Point(b, f(b))]  # punkty
+    if p[0].get_y() * p[1].get_y() >= 0:    #
+        return None
 
     def next_step(a, b):
         f_a_res = f(a)  # to sie powtarza wiec liczmy tylko raz...
@@ -11,32 +30,23 @@ def szukaj_miejsc_zerowych_metoda_cieciw(a,b, stop, stop_param, f):
             b = var
         else:
             a = var
+        p.append(Point(var, f(var)))
         return a, b
 
-
     if stop == 'eps':
-        err = sys.maxsize
-        while err > stop_param:
-            a, b = next_step(a, b)
-            print(a,b)
-            err = abs(a - b)
-        return a if init_a < a < init_b else None
+        errA = sys.maxsize
+        errB = sys.maxsize
+        while errA > stop_param and errB > stop_param:
+            a, b = next_step(a,b)
+            errA = abs(a - b)
+            errB = abs(p[len(p)-1].get_y())
     elif stop == 'iter':
-        i = 0
-        while i < stop_param:
-            a, b = next_step(a, b)
-            i += 1
-        return a if init_a < a < init_b else None
+        for i in range(stop_param):
+            a, b = next_step(a,b)
+
+    return p
 
 
-
-#todo
-def styczna(a,b, stop, stop_param, f):
+# todo
+def styczna(a, b, stop, stop_param, f):
     pass
-
-
-
-
-
-
-
